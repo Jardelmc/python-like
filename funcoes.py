@@ -12,9 +12,34 @@ def tabPress(qtd):
 		keyboard.release(Key.tab)
 		time.sleep(1)
 
+#Servers position:
+#EUA1
+eua1X = 605
+eua1Y = 674
+
+#EUA2
+eua2X = 601
+eua2Y = 704
+
+#ALE
+aleX = 598
+aleY = 736
+
+#HOL
+holX = 589
+holY = 767
+
+#RU
+ruX = 638
+ruY = 797
+
+#RepTcheca
+repX = 601
+repY = 830
 
 
-def firefoxFotoEUA1(url):
+
+def firefox(url, mediaTabTimes, xServer, yServer):
 	pyperclip.copy(url)
 	time.sleep(2)
 	mouse.position = (176,884) #Open Firefox
@@ -29,7 +54,7 @@ def firefoxFotoEUA1(url):
 	mouse.click(Button.left, 1)
 	time.sleep(1)
 
-	mouse.position = (605,674) #Select EUA1 server
+	mouse.position = (xServer,yServer) #Select server
 	mouse.click(Button.left, 1)
 	time.sleep(1)
 
@@ -57,7 +82,7 @@ def firefoxFotoEUA1(url):
 	mouse.click(Button.left, 1)
 	time.sleep(1)
 
-	tabPress(3) #Tab Key
+	tabPress(mediaTabTimes) #Tab Key
 
 	keyboard.press(Key.space)
 	keyboard.release(Key.space)
