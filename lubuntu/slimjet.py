@@ -14,47 +14,43 @@ def tabPress(qtd):
 
 #Servers position:
 #EUA1
-eua1X = 490
-eua1Y = 662
+eua1X = 502
+eua1Y = 654
 
 #EUA2
-eua2X = 485
-eua2Y = 700
+eua2X = 499
+eua2Y = 685
 
 #ALE
-aleX = 495
-aleY = 735
+aleX = 514
+aleY = 719
 
 #HOL
-holX = 505
-holY = 768
+holX = 805
+holY = 748
 
 #RU
-ruX = 489
-ruY = 803
+ruX = 507
+ruY = 778
 
 #RepTcheca
-repX = 530
-repY = 837
+repX = 509
+repY = 808
 
 
 
-def gnome(url, mediaTabTimes, xServer, yServer):
+def slimjet(url, mediaTabTimes, xServer, yServer):
 	pyperclip.copy(url)
 	time.sleep(2)
-	mouse.position = (268,883) #Open Gnome Browser
+	mouse.position = (360,885) #Open Midori Browser
 	mouse.click(Button.left, 1)
 	time.sleep(7)
 
-	mouse.position = (1238,21) #Open Favorites SPECIAL STEP
-	mouse.click(Button.left, 1)
-	time.sleep(2)
-
-	mouse.position = (1113,135) #Open Proxy Site
+	mouse.position = (144,86) #Open Proxy Site
 	mouse.click(Button.left, 1)
 	time.sleep(12)
 
-	mouse.position = (475,613) #Click to select server
+	mouse.position = (502,610) #Click to select server
 	mouse.click(Button.left, 1)
 	time.sleep(1)
 
@@ -62,27 +58,27 @@ def gnome(url, mediaTabTimes, xServer, yServer):
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (494,509) #Click right to paste url
+	mouse.position = (515,516) #Click right to paste url
 	mouse.click(Button.right, 1)
 	time.sleep(3)
 
-	mouse.position = (542,628) #Paste URL
+	mouse.position = (565,644) #Paste URL
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (717,796) #Click to access site with proxy site
+	mouse.position = (716,775) #Click to access site with proxy site
 	mouse.click(Button.left, 1)
 	time.sleep(11)
 
-	mouse.position = (714,572) #Agree terms to proxy site
+	mouse.position = (717,631) #Agree terms to proxy site
 	mouse.click(Button.left, 1)
 	time.sleep(11)
 
-	mouse.position = (694,441) #Modal
+	mouse.position = (711,492) #Modal
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (1260,385) #Click null area
+	mouse.position = (1244,409) #Click null area
 	mouse.click(Button.left, 1)
 	time.sleep(1)
 
@@ -92,7 +88,7 @@ def gnome(url, mediaTabTimes, xServer, yServer):
 	keyboard.release(Key.space)
 	time.sleep(3)
 
-	mouse.position = (1410,26) #Close browser
+	mouse.position = (1422,17) #Close browser
 	mouse.click(Button.left, 1)
 
 

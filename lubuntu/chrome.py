@@ -12,6 +12,9 @@ def tabPress(qtd):
 		keyboard.release(Key.tab)
 		time.sleep(1)
 
+
+#Chrome run at 90 zoom
+
 #Servers position:
 #EUA1
 eua1X = 513
@@ -48,7 +51,11 @@ def chrome(url, mediaTabTimes, xServer, yServer):
 
 	mouse.position = (153,87) #Open Proxy Site
 	mouse.click(Button.left, 1)
-	time.sleep(12)
+	time.sleep(10)
+
+  mouse.position = (707,195) #Accept coockie terms
+	mouse.click(Button.left, 1)
+	time.sleep(2)
 
 	mouse.position = (498,609) #Click to select server
 	mouse.click(Button.left, 1)

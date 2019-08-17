@@ -42,7 +42,7 @@ repY = 862
 def yandex(url, mediaTabTimes, xServer, yServer):
 	pyperclip.copy(url)
 	time.sleep(2)
-	mouse.position = (359,882) #Open Yandex
+	mouse.position = (330,882) #Open Yandex
 	mouse.click(Button.left, 1)
 	time.sleep(7)
 

@@ -12,6 +12,8 @@ def tabPress(qtd):
 		keyboard.release(Key.tab)
 		time.sleep(1)
 
+#Firefox run at 90 zoom
+
 #Servers position:
 #EUA1
 eua1X = 605
@@ -48,11 +50,15 @@ def firefox(url, mediaTabTimes, xServer, yServer):
 
 	mouse.position = (218,109) #Open Proxy Site
 	mouse.click(Button.left, 1)
-	time.sleep(12)
+	time.sleep(10)
+
+  mouse.position = (715,215) #Accept coockie terms
+	mouse.click(Button.left, 1)
+	time.sleep(3)
 
 	mouse.position = (635,628) #Click to select server
 	mouse.click(Button.left, 1)
-	time.sleep(1)
+	time.sleep(2)
 
 	mouse.position = (xServer,yServer) #Select server
 	mouse.click(Button.left, 1)

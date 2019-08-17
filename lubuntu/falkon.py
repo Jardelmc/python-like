@@ -14,28 +14,28 @@ def tabPress(qtd):
 
 #Servers position:
 #EUA1
-eua1X = 526
-eua1Y = 676
+eua1X = 498
+eua1Y = 673
 
 #EUA2
-eua2X = 488
+eua2X = 494
 eua2Y = 706
 
 #ALE
-aleX = 492
-aleY = 470
+aleX = 499
+aleY = 737
 
 #HOL
-holX = 497
-holY = 748
+holX = 507
+holY = 768
 
 #RU
-ruX = 504
-ruY = 805
+ruX = 499
+ruY = 802
 
 #RepTcheca
-repX = 512
-repY = 809
+repX = 502
+repY = 833
 
 
 
@@ -46,40 +46,40 @@ def falkon(url, mediaTabTimes, xServer, yServer):
 	mouse.click(Button.left, 1)
 	time.sleep(7)
 
-	mouse.position = (358,473) #Open Proxy Site
+  mouse.position = (719,195) #Accept coockie terms
 	mouse.click(Button.left, 1)
-	time.sleep(12)
-
+	time.sleep(2)
+	
 	mouse.position = (497,629) #Click to select server
-	mouse.click(Button.left, 1)
+	mouse.click(Button.left, 2)
 	time.sleep(1)
 
 	mouse.position = (xServer,yServer) #Select server
-	mouse.click(Button.left, 1)
+	mouse.click(Button.left, 2)
 	time.sleep(3)
 
 	mouse.position = (509,529) #Click right to paste url
-	mouse.click(Button.right, 1)
+	mouse.click(Button.right, 2)
 	time.sleep(3)
 
 	mouse.position = (558,665) #Paste URL
-	mouse.click(Button.left, 1)
+	mouse.click(Button.left, 2)
 	time.sleep(3)
 
 	mouse.position = (706,801) #Click to access site with proxy site
-	mouse.click(Button.left, 1)
+	mouse.click(Button.left, 2)
 	time.sleep(11)
 
 	mouse.position = (722,590) #Agree terms to proxy site
-	mouse.click(Button.left, 1)
+	mouse.click(Button.left, 2)
 	time.sleep(11)
 
 	mouse.position = (703,486) #Modal
-	mouse.click(Button.left, 1)
+	mouse.click(Button.left, 2)
 	time.sleep(3)
 
 	mouse.position = (1246,345) #Click null area
-	mouse.click(Button.left, 1)
+	mouse.click(Button.left, 2)
 	time.sleep(1)
 
 	tabPress(mediaTabTimes) #Tab Key

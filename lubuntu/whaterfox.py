@@ -14,47 +14,43 @@ def tabPress(qtd):
 
 #Servers position:
 #EUA1
-eua1X = 490
-eua1Y = 662
+eua1X = 505
+eua1Y = 682
 
 #EUA2
-eua2X = 485
-eua2Y = 700
+eua2X = 510
+eua2Y = 714
 
 #ALE
-aleX = 495
-aleY = 735
+aleX = 511
+aleY = 747
 
 #HOL
-holX = 505
-holY = 768
+holX = 503
+holY = 778
 
 #RU
-ruX = 489
-ruY = 803
+ruX = 510
+ruY = 805
 
 #RepTcheca
-repX = 530
-repY = 837
+repX = 508
+repY = 838
 
 
 
-def gnome(url, mediaTabTimes, xServer, yServer):
+def whaterfox(url, mediaTabTimes, xServer, yServer):
 	pyperclip.copy(url)
 	time.sleep(2)
-	mouse.position = (268,883) #Open Gnome Browser
+	mouse.position = (393,883) #Open Whaterfox
 	mouse.click(Button.left, 1)
 	time.sleep(7)
 
-	mouse.position = (1238,21) #Open Favorites SPECIAL STEP
-	mouse.click(Button.left, 1)
-	time.sleep(2)
-
-	mouse.position = (1113,135) #Open Proxy Site
+	mouse.position = (82,117) #Open Proxy Site
 	mouse.click(Button.left, 1)
 	time.sleep(12)
 
-	mouse.position = (475,613) #Click to select server
+	mouse.position = (486,636) #Click to select server
 	mouse.click(Button.left, 1)
 	time.sleep(1)
 
@@ -62,23 +58,23 @@ def gnome(url, mediaTabTimes, xServer, yServer):
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (494,509) #Click right to paste url
+	mouse.position = (519,544) #Click right to paste url
 	mouse.click(Button.right, 1)
 	time.sleep(3)
 
-	mouse.position = (542,628) #Paste URL
+	mouse.position = (561,638) #Paste URL
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (717,796) #Click to access site with proxy site
+	mouse.position = (713,804) #Click to access site with proxy site
 	mouse.click(Button.left, 1)
 	time.sleep(11)
 
-	mouse.position = (714,572) #Agree terms to proxy site
-	mouse.click(Button.left, 1)
-	time.sleep(11)
+	#mouse.position = (714,572) #Agree terms to proxy site
+	#mouse.click(Button.left, 1)
+	#time.sleep(11)
 
-	mouse.position = (694,441) #Modal
+	mouse.position = (697,518) #Modal
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
