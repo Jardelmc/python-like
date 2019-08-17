@@ -37,9 +37,10 @@ ruY = 829
 repX = 503
 repY = 862
 
-
+# yandex FOTO: 3TAB || VIDEO: 6TAB
 
 def yandex(url, mediaTabTimes, xServer, yServer):
+  
 	pyperclip.copy(url)
 	time.sleep(2)
 	mouse.position = (330,882) #Open Yandex
@@ -93,3 +94,18 @@ def yandex(url, mediaTabTimes, xServer, yServer):
 
 
 
+def startRequest(url,mediaTabTimes):
+  qtdTabByMediaType = 0
+  if mediaTabTimes == 'foto':
+    qtdTabByMediaType = 3
+  if mediaTabTimes == 'video':
+    qtdTabByMediaType = 6
+  if qtdTabByMediaType == 0:
+    return
+
+  yandex(url,qtdTabByMediaType,eua1X,eua1Y)
+  yandex(url,qtdTabByMediaType,eua2X,eua2Y)
+  yandex(url,qtdTabByMediaType,aleX,aleY)
+  yandex(url,qtdTabByMediaType,holX,holY)
+  yandex(url,qtdTabByMediaType,ruX,ruY)
+  yandex(url,qtdTabByMediaType,repX,repY)

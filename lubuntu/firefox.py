@@ -39,9 +39,10 @@ ruY = 797
 repX = 601
 repY = 830
 
-
+# firefox FOTO: 3TAB || VIDEO: 5TAB
 
 def firefox(url, mediaTabTimes, xServer, yServer):
+  
 	pyperclip.copy(url)
 	time.sleep(2)
 	mouse.position = (176,884) #Open Firefox
@@ -99,3 +100,18 @@ def firefox(url, mediaTabTimes, xServer, yServer):
 
 
 
+def startRequest(url,mediaTabTimes):
+  qtdTabByMediaType = 0
+  if mediaTabTimes == 'foto':
+    qtdTabByMediaType = 3
+  if mediaTabTimes == 'video':
+    qtdTabByMediaType = 6
+  if qtdTabByMediaType == 0:
+    return
+
+  firefox(url,qtdTabByMediaType,eua1X,eua1Y)
+  firefox(url,qtdTabByMediaType,eua2X,eua2Y)
+  firefox(url,qtdTabByMediaType,aleX,aleY)
+  firefox(url,qtdTabByMediaType,holX,holY)
+  firefox(url,qtdTabByMediaType,ruX,ruY)
+  firefox(url,qtdTabByMediaType,repX,repY)

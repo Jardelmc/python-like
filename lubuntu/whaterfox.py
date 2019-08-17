@@ -37,9 +37,10 @@ ruY = 805
 repX = 508
 repY = 838
 
-
+# whaterfox FOTO: 3TAB || VIDEO: 5TAB
 
 def whaterfox(url, mediaTabTimes, xServer, yServer):
+ 
 	pyperclip.copy(url)
 	time.sleep(2)
 	mouse.position = (393,883) #Open Whaterfox
@@ -70,9 +71,9 @@ def whaterfox(url, mediaTabTimes, xServer, yServer):
 	mouse.click(Button.left, 1)
 	time.sleep(11)
 
-	#mouse.position = (714,572) #Agree terms to proxy site
-	#mouse.click(Button.left, 1)
-	#time.sleep(11)
+	mouse.position = (712,656) #Agree terms to proxy site
+	mouse.click(Button.left, 1)
+	time.sleep(11)
 
 	mouse.position = (697,518) #Modal
 	mouse.click(Button.left, 1)
@@ -88,8 +89,22 @@ def whaterfox(url, mediaTabTimes, xServer, yServer):
 	keyboard.release(Key.space)
 	time.sleep(3)
 
-	mouse.position = (1410,26) #Close browser
+	mouse.position = (1428,15) #Close browser
 	mouse.click(Button.left, 1)
 
 
+def startRequest(url,mediaTabTimes):
+  qtdTabByMediaType = 0
+  if mediaTabTimes == 'foto':
+    qtdTabByMediaType = 3
+  if mediaTabTimes == 'video':
+    qtdTabByMediaType = 6
+  if qtdTabByMediaType == 0:
+    return
 
+  whaterfox(url,qtdTabByMediaType,eua1X,eua1Y)
+  whaterfox(url,qtdTabByMediaType,eua2X,eua2Y)
+  whaterfox(url,qtdTabByMediaType,aleX,aleY)
+  whaterfox(url,qtdTabByMediaType,holX,holY)
+  whaterfox(url,qtdTabByMediaType,ruX,ruY)
+  whaterfox(url,qtdTabByMediaType,repX,repY)

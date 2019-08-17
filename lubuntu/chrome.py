@@ -40,9 +40,10 @@ ruY = 779
 repX = 512
 repY = 809
 
+# chrome FOTO: 3TAB || VIDEO: 6TAB
 
+def chrome(url, mediaTabTimes, xServer, yServer):  
 
-def chrome(url, mediaTabTimes, xServer, yServer):
 	pyperclip.copy(url)
 	time.sleep(2)
 	mouse.position = (206,884) #Open Chrome
@@ -99,4 +100,19 @@ def chrome(url, mediaTabTimes, xServer, yServer):
 	mouse.click(Button.left, 1)
 
 
+def startRequest(url,mediaTabTimes):
+  qtdTabByMediaType = 0
+  if mediaTabTimes == 'foto':
+    qtdTabByMediaType = 3
+  if mediaTabTimes == 'video':
+    qtdTabByMediaType = 6
+  if qtdTabByMediaType == 0:
+    return
+
+  chrome(url,qtdTabByMediaType,eua1X,eua1Y)
+  chrome(url,qtdTabByMediaType,eua2X,eua2Y)
+  chrome(url,qtdTabByMediaType,aleX,aleY)
+  chrome(url,qtdTabByMediaType,holX,holY)
+  chrome(url,qtdTabByMediaType,ruX,ruY)
+  chrome(url,qtdTabByMediaType,repX,repY)
 

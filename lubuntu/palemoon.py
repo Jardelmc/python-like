@@ -37,9 +37,10 @@ ruY = 768
 repX = 600
 repY = 800
 
-
+# palemoon FOTO: 3TAB || VIDEO: 5TAB
 
 def palemoon(url, mediaTabTimes, xServer, yServer):
+
 	pyperclip.copy(url)
 	time.sleep(2)
 	mouse.position = (299,884) #Open Palemoon
@@ -92,4 +93,18 @@ def palemoon(url, mediaTabTimes, xServer, yServer):
 	mouse.click(Button.left, 1)
 
 
+def startRequest(url,mediaTabTimes):
+  qtdTabByMediaType = 0
+  if mediaTabTimes == 'foto':
+    qtdTabByMediaType = 3
+  if mediaTabTimes == 'video':
+    qtdTabByMediaType = 6
+  if qtdTabByMediaType == 0:
+    return
 
+  palemoon(url,qtdTabByMediaType,eua1X,eua1Y)
+  palemoon(url,qtdTabByMediaType,eua2X,eua2Y)
+  palemoon(url,qtdTabByMediaType,aleX,aleY)
+  palemoon(url,qtdTabByMediaType,holX,holY)
+  palemoon(url,qtdTabByMediaType,ruX,ruY)
+  palemoon(url,qtdTabByMediaType,repX,repY)

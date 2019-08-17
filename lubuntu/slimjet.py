@@ -37,9 +37,10 @@ ruY = 778
 repX = 509
 repY = 808
 
-
+# slimjet FOTO: 3TAB || VIDEO: 6TAB
 
 def slimjet(url, mediaTabTimes, xServer, yServer):
+
 	pyperclip.copy(url)
 	time.sleep(2)
 	mouse.position = (360,885) #Open Midori Browser
@@ -93,3 +94,18 @@ def slimjet(url, mediaTabTimes, xServer, yServer):
 
 
 
+def startRequest(url,mediaTabTimes):
+  qtdTabByMediaType = 0
+  if mediaTabTimes == 'foto':
+    qtdTabByMediaType = 3
+  if mediaTabTimes == 'video':
+    qtdTabByMediaType = 6
+  if qtdTabByMediaType == 0:
+    return
+
+  slimjet(url,qtdTabByMediaType,eua1X,eua1Y)
+  slimjet(url,qtdTabByMediaType,eua2X,eua2Y)
+  slimjet(url,qtdTabByMediaType,aleX,aleY)
+  slimjet(url,qtdTabByMediaType,holX,holY)
+  slimjet(url,qtdTabByMediaType,ruX,ruY)
+  slimjet(url,qtdTabByMediaType,repX,repY)

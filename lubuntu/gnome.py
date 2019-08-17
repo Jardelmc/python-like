@@ -37,9 +37,10 @@ ruY = 803
 repX = 530
 repY = 837
 
-
+# gnome FOTO: 2TAB || VIDEO: 5TAB
 
 def gnome(url, mediaTabTimes, xServer, yServer):
+	
 	pyperclip.copy(url)
 	time.sleep(2)
 	mouse.position = (268,883) #Open Gnome Browser
@@ -95,5 +96,19 @@ def gnome(url, mediaTabTimes, xServer, yServer):
 	mouse.position = (1410,26) #Close browser
 	mouse.click(Button.left, 1)
 
+def startRequest(url,mediaTabTimes):
+  qtdTabByMediaType = 0
+  if mediaTabTimes == 'foto':
+    qtdTabByMediaType = 3
+  if mediaTabTimes == 'video':
+    qtdTabByMediaType = 6
+  if qtdTabByMediaType == 0:
+    return
 
+  gnome(url,qtdTabByMediaType,eua1X,eua1Y)
+  gnome(url,qtdTabByMediaType,eua2X,eua2Y)
+  gnome(url,qtdTabByMediaType,aleX,aleY)
+  gnome(url,qtdTabByMediaType,holX,holY)
+  gnome(url,qtdTabByMediaType,ruX,ruY)
+  gnome(url,qtdTabByMediaType,repX,repY)
 
