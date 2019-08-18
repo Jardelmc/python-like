@@ -12,74 +12,28 @@ def tabPress(qtd):
 		keyboard.release(Key.tab)
 		time.sleep(1)
 
-#Servers position:
-#EUA1
-eua1X = 505
-eua1Y = 682
-
-#EUA2
-eua2X = 510
-eua2Y = 714
-
-#ALE
-aleX = 511
-aleY = 747
-
-#HOL
-holX = 503
-holY = 778
-
-#RU
-ruX = 510
-ruY = 805
-
-#RepTcheca
-repX = 508
-repY = 838
-
 # whaterfox FOTO: 3TAB || VIDEO: 5TAB
 
-def whaterfox(url, mediaTabTimes, xServer, yServer):
- 
-	pyperclip.copy(url)
-	time.sleep(2)
-	mouse.position = (393,883) #Open Whaterfox
-	mouse.click(Button.left, 1)
-	time.sleep(7)
-
-	mouse.position = (82,117) #Open Proxy Site
-	mouse.click(Button.left, 1)
-	time.sleep(12)
-
-	mouse.position = (486,636) #Click to select server
+def like(url):
+	mouse.position = (1281,378) #Click null area
 	mouse.click(Button.left, 1)
 	time.sleep(1)
 
-	mouse.position = (xServer,yServer) #Select server
+	keyboard.press(Key.f6) #Firefox command to access link navigation
+	keyboard.release(Key.f6)
+	time.sleep(1)
+
+	keyboard.type(url) #Type url proxy site
+
+	keyboard.press(Key.enter) #Enter to access proxy site
+	keyboard.release(Key.enter)
+	time.sleep(5)
+
+	mouse.position = (713,508) #Modal
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (519,544) #Click right to paste url
-	mouse.click(Button.right, 1)
-	time.sleep(3)
-
-	mouse.position = (561,638) #Paste URL
-	mouse.click(Button.left, 1)
-	time.sleep(3)
-
-	mouse.position = (713,804) #Click to access site with proxy site
-	mouse.click(Button.left, 1)
-	time.sleep(11)
-
-	mouse.position = (712,656) #Agree terms to proxy site
-	mouse.click(Button.left, 1)
-	time.sleep(11)
-
-	mouse.position = (697,518) #Modal
-	mouse.click(Button.left, 1)
-	time.sleep(3)
-
-	mouse.position = (1260,385) #Click null area
+	mouse.position = (1281,378) #Click null area
 	mouse.click(Button.left, 1)
 	time.sleep(1)
 
@@ -88,9 +42,6 @@ def whaterfox(url, mediaTabTimes, xServer, yServer):
 	keyboard.press(Key.space)
 	keyboard.release(Key.space)
 	time.sleep(3)
-
-	mouse.position = (1428,15) #Close browser
-	mouse.click(Button.left, 1)
 
 
 def startRequest(url,mediaTabTimes):
@@ -102,9 +53,13 @@ def startRequest(url,mediaTabTimes):
   if qtdTabByMediaType == 0:
     return
 
-  whaterfox(url,qtdTabByMediaType,eua1X,eua1Y)
-  whaterfox(url,qtdTabByMediaType,eua2X,eua2Y)
-  whaterfox(url,qtdTabByMediaType,aleX,aleY)
-  whaterfox(url,qtdTabByMediaType,holX,holY)
-  whaterfox(url,qtdTabByMediaType,ruX,ruY)
-  whaterfox(url,qtdTabByMediaType,repX,repY)
+	count = 1
+	for x in range(9):
+		arrayURL = getURL.splice('.kproxy')		
+		urlToLike = 'server{}.kproxy{}'.format(count, arrayURL[1])
+		count = count + 1
+
+  	like(url,qtdTabByMediaType)
+
+	mouse.position = (1426,14) #Close browser after loop
+	mouse.click(Button.left, 1)

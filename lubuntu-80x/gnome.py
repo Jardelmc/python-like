@@ -12,82 +12,29 @@ def tabPress(qtd):
 		keyboard.release(Key.tab)
 		time.sleep(1)
 
-#Servers position:
-#EUA1
-eua1X = 490
-eua1Y = 662
-
-#EUA2
-eua2X = 485
-eua2Y = 700
-
-#ALE
-aleX = 495
-aleY = 735
-
-#HOL
-holX = 505
-holY = 768
-
-#RU
-ruX = 489
-ruY = 803
-
-#RepTcheca
-repX = 530
-repY = 837
 
 # gnome FOTO: 2TAB || VIDEO: 5TAB
 
-def gnome(url, mediaTabTimes, xServer, yServer):
-	
-	
-	time.sleep(2)
-	mouse.position = (268,883) #Open Gnome Browser
-	mouse.click(Button.left, 1)
-	time.sleep(7)
-
-	mouse.position = (1238,21) #Open Favorites SPECIAL STEP
-	mouse.click(Button.left, 1)
-	time.sleep(2)
-
-	mouse.position = (1113,135) #Open Proxy Site
-	mouse.click(Button.left, 1)
-	time.sleep(12)
-
-	mouse.position = (475,613) #Click to select server
-	mouse.click(Button.left, 1)
-	time.sleep(1)	
-	
-	mouse.position = (xServer,yServer) #Select server
-	mouse.click(Button.left, 1)
-	time.sleep(3)
-	
-	pyperclip.copy(url)
-	pyperclip.copy(url)
-	mouse.position = (494,509) #Click right to paste url
+def like(url):
+	mouse.position = (1281,378) #Click null area
 	mouse.click(Button.left, 1)
 	time.sleep(1)
-	mouse.click(Button.right, 1)
-	time.sleep(3)
 
-	mouse.position = (542,628) #Paste URL
+	keyboard.press(Key.f6) #Gnome command to access link navigation
+	keyboard.release(Key.f6)
+	time.sleep(1)
+
+	keyboard.type(url) #Type url proxy site
+
+	keyboard.press(Key.enter) #Enter to access proxy site
+	keyboard.release(Key.enter)
+	time.sleep(5)
+
+	mouse.position = (713,436) #Modal
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (717,796) #Click to access site with proxy site
-	mouse.click(Button.left, 1)
-	time.sleep(11)
-
-	mouse.position = (714,572) #Agree terms to proxy site
-	mouse.click(Button.left, 1)
-	time.sleep(11)
-
-	mouse.position = (694,441) #Modal
-	mouse.click(Button.left, 1)
-	time.sleep(3)
-
-	mouse.position = (1260,385) #Click null area
+	mouse.position = (1281,378) #Click null area
 	mouse.click(Button.left, 1)
 	time.sleep(1)
 
@@ -97,8 +44,6 @@ def gnome(url, mediaTabTimes, xServer, yServer):
 	keyboard.release(Key.space)
 	time.sleep(3)
 
-	mouse.position = (1410,26) #Close browser
-	mouse.click(Button.left, 1)
 
 def startRequest(url,mediaTabTimes):
   qtdTabByMediaType = 0
@@ -109,10 +54,14 @@ def startRequest(url,mediaTabTimes):
   if qtdTabByMediaType == 0:
     return
 
-  gnome(url,qtdTabByMediaType,eua1X,eua1Y)
-  gnome(url,qtdTabByMediaType,eua2X,eua2Y)
-  gnome(url,qtdTabByMediaType,aleX,aleY)
-  gnome(url,qtdTabByMediaType,holX,holY)
-  gnome(url,qtdTabByMediaType,ruX,ruY)
-  gnome(url,qtdTabByMediaType,repX,repY)
+	count = 1
+	for x in range(9):
+		arrayURL = getURL.splice('.kproxy')		
+		urlToLike = 'server{}.kproxy{}'.format(count, arrayURL[1])
+		count = count + 1
+
+  	like(url,qtdTabByMediaType)
+
+	mouse.position = (1407,24) #Close browser after loop
+	mouse.click(Button.left, 1)
 

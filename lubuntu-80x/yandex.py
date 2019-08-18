@@ -12,74 +12,28 @@ def tabPress(qtd):
 		keyboard.release(Key.tab)
 		time.sleep(1)
 
-#Servers position:
-#EUA1
-eua1X = 487
-eua1Y = 689
-
-#EUA2
-eua2X = 487
-eua2Y = 721
-
-#ALE
-aleX = 490
-aleY = 759
-
-#HOL
-holX = 484
-holY = 791
-
-#RU
-ruX = 486
-ruY = 829
-
-#RepTcheca
-repX = 503
-repY = 862
-
 # yandex FOTO: 3TAB || VIDEO: 6TAB
 
-def yandex(url, mediaTabTimes, xServer, yServer):
-  
-	pyperclip.copy(url)
-	time.sleep(2)
-	mouse.position = (330,882) #Open Yandex
-	mouse.click(Button.left, 1)
-	time.sleep(7)
-
-	mouse.position = (716,146) #Open Proxy Site
-	mouse.click(Button.left, 1)
-	time.sleep(12)
-
-	mouse.position = (475,635) #Click to select server
+def like(url):
+	mouse.position = (1281,528) #Click null area
 	mouse.click(Button.left, 1)
 	time.sleep(1)
 
-	mouse.position = (xServer,yServer) #Select server
+	keyboard.press(Key.f6) #Yandex command to access link navigation
+	keyboard.release(Key.f6)
+	time.sleep(1)
+
+	keyboard.type(url) #Type url proxy site
+
+	keyboard.press(Key.enter) #Enter to access proxy site
+	keyboard.release(Key.enter)
+	time.sleep(5)
+
+	mouse.position = (713,508) #Modal
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (493,530) #Click right to paste url
-	mouse.click(Button.right, 1)
-	time.sleep(3)
-
-	mouse.position = (517,648) #Paste URL
-	mouse.click(Button.left, 1)
-	time.sleep(3)
-
-	mouse.position = (710,819) #Click to access site with proxy site
-	mouse.click(Button.left, 1)
-	time.sleep(11)
-
-	mouse.position = (721,598) #Agree terms to proxy site
-	mouse.click(Button.left, 1)
-	time.sleep(11)
-
-	mouse.position = (683,460) #Modal
-	mouse.click(Button.left, 1)
-	time.sleep(3)
-
-	mouse.position = (1260,369) #Click null area
+	mouse.position = (1281,378) #Click null area
 	mouse.click(Button.left, 1)
 	time.sleep(1)
 
@@ -88,10 +42,6 @@ def yandex(url, mediaTabTimes, xServer, yServer):
 	keyboard.press(Key.space)
 	keyboard.release(Key.space)
 	time.sleep(3)
-
-	mouse.position = (1419,15) #Close browser
-	mouse.click(Button.left, 1)
-
 
 
 def startRequest(url,mediaTabTimes):
@@ -103,9 +53,13 @@ def startRequest(url,mediaTabTimes):
   if qtdTabByMediaType == 0:
     return
 
-  yandex(url,qtdTabByMediaType,eua1X,eua1Y)
-  yandex(url,qtdTabByMediaType,eua2X,eua2Y)
-  yandex(url,qtdTabByMediaType,aleX,aleY)
-  yandex(url,qtdTabByMediaType,holX,holY)
-  yandex(url,qtdTabByMediaType,ruX,ruY)
-  yandex(url,qtdTabByMediaType,repX,repY)
+	count = 1
+	for x in range(9):
+		arrayURL = getURL.splice('.kproxy')		
+		urlToLike = 'server{}.kproxy{}'.format(count, arrayURL[1])
+		count = count + 1
+
+  	like(url,qtdTabByMediaType)
+
+	mouse.position = (1426,14) #Close browser after loop
+	mouse.click(Button.left, 1)

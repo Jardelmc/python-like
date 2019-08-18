@@ -12,80 +12,29 @@ def tabPress(qtd):
 		keyboard.release(Key.tab)
 		time.sleep(1)
 
-#Firefox run at 90 zoom
-
-#Servers position:
-#EUA1
-eua1X = 605
-eua1Y = 674
-
-#EUA2
-eua2X = 601
-eua2Y = 704
-
-#ALE
-aleX = 598
-aleY = 736
-
-#HOL
-holX = 589
-holY = 767
-
-#RU
-ruX = 638
-ruY = 797
-
-#RepTcheca
-repX = 601
-repY = 830
 
 # firefox FOTO: 3TAB || VIDEO: 5TAB
 
-def firefox(url, mediaTabTimes, xServer, yServer):
-  
-	pyperclip.copy(url)
-	time.sleep(2)
-	mouse.position = (176,884) #Open Firefox
+def like(url):
+	mouse.position = (1281,378) #Click null area
 	mouse.click(Button.left, 1)
-	time.sleep(7)
+	time.sleep(1)
 
-	mouse.position = (218,109) #Open Proxy Site
-	mouse.click(Button.left, 1)
-	time.sleep(10)
+	keyboard.press(Key.f6) #Firefox command to access link navigation
+	keyboard.release(Key.f6)
+	time.sleep(1)
 
-  	mouse.position = (715,215) #Accept coockie terms
-	mouse.click(Button.left, 1)
-	time.sleep(3)
+	keyboard.type(url) #Type url proxy site
 
-	mouse.position = (635,628) #Click to select server
-	mouse.click(Button.left, 1)
-	time.sleep(2)
+	keyboard.press(Key.enter) #Enter to access proxy site
+	keyboard.release(Key.enter)
+	time.sleep(5)
 
-	mouse.position = (xServer,yServer) #Select server
+	mouse.position = (713,508) #Modal
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (570,536) #Click right to paste url
-	mouse.click(Button.right, 1)
-	time.sleep(3)
-
-	mouse.position = (625,627) #Paste URL
-	mouse.click(Button.left, 1)
-	time.sleep(3)
-
-	mouse.position = (781,801) #Click to access site with proxy site
-	mouse.click(Button.left, 1)
-	time.sleep(11)
-
-	mouse.position = (806,650) #Agree terms to proxy site
-	mouse.click(Button.left, 1)
-	time.sleep(11)
-
-	mouse.position = (783,508) #Modal
-	mouse.click(Button.left, 1)
-	time.sleep(3)
-
-	mouse.position = (1348,318) #Click null area
+	mouse.position = (1281,378) #Click null area
 	mouse.click(Button.left, 1)
 	time.sleep(1)
 
@@ -94,10 +43,6 @@ def firefox(url, mediaTabTimes, xServer, yServer):
 	keyboard.press(Key.space)
 	keyboard.release(Key.space)
 	time.sleep(3)
-
-	mouse.position = (1587,14) #Close
-	mouse.click(Button.left, 1)
-
 
 
 def startRequest(url,mediaTabTimes):
@@ -109,9 +54,13 @@ def startRequest(url,mediaTabTimes):
   if qtdTabByMediaType == 0:
     return
 
-  firefox(url,qtdTabByMediaType,eua1X,eua1Y)
-  firefox(url,qtdTabByMediaType,eua2X,eua2Y)
-  firefox(url,qtdTabByMediaType,aleX,aleY)
-  firefox(url,qtdTabByMediaType,holX,holY)
-  firefox(url,qtdTabByMediaType,ruX,ruY)
-  firefox(url,qtdTabByMediaType,repX,repY)
+	count = 1
+	for x in range(9):
+		arrayURL = getURL.splice('.kproxy')		
+		urlToLike = 'server{}.kproxy{}'.format(count, arrayURL[1])
+		count = count + 1
+
+  	like(url,qtdTabByMediaType)
+
+	mouse.position = (1426,14) #Close browser after loop
+	mouse.click(Button.left, 1)
