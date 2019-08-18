@@ -12,80 +12,74 @@ def tabPress(qtd):
 		keyboard.release(Key.tab)
 		time.sleep(1)
 
-#Firefox run at 90 zoom
-
 #Servers position:
 #EUA1
-eua1X = 605
-eua1Y = 674
+eua1X = 592
+eua1Y = 649
 
 #EUA2
-eua2X = 601
-eua2Y = 704
+eua2X = 591
+eua2Y = 678
 
 #ALE
-aleX = 598
-aleY = 736
+aleX = 596
+aleY = 709
 
 #HOL
-holX = 589
-holY = 767
+holX = 606
+holY = 739
 
 #RU
-ruX = 638
-ruY = 797
+ruX = 598
+ruY = 768
 
 #RepTcheca
-repX = 601
-repY = 830
+repX = 600
+repY = 800
 
-# firefox FOTO: 3TAB || VIDEO: 5TAB
+# palemoon FOTO: 3TAB || VIDEO: 5TAB
 
-def firefox(url, mediaTabTimes, xServer, yServer):
-  
+def palemoon(url, mediaTabTimes, xServer, yServer):
+
 	pyperclip.copy(url)
 	time.sleep(2)
-	mouse.position = (176,884) #Open Firefox
+	mouse.position = (299,884) #Open Palemoon
 	mouse.click(Button.left, 1)
 	time.sleep(7)
 
-	mouse.position = (218,109) #Open Proxy Site
+	mouse.position = (210,100) #Open Proxy Site
 	mouse.click(Button.left, 1)
-	time.sleep(10)
+	time.sleep(12)
 
-  mouse.position = (715,215) #Accept coockie terms
+	mouse.position = (581,602) #Click to select server
 	mouse.click(Button.left, 1)
-	time.sleep(3)
-
-	mouse.position = (635,628) #Click to select server
-	mouse.click(Button.left, 1)
-	time.sleep(2)
+	time.sleep(1)
 
 	mouse.position = (xServer,yServer) #Select server
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (570,536) #Click right to paste url
+	mouse.position = (593,517) #Click right to paste url
 	mouse.click(Button.right, 1)
 	time.sleep(3)
 
-	mouse.position = (625,627) #Paste URL
+	mouse.position = (641,598) #Paste URL
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (781,801) #Click to access site with proxy site
+	mouse.position = (710,767) #Click to access site with proxy site
 	mouse.click(Button.left, 1)
 	time.sleep(11)
 
-	mouse.position = (806,650) #Agree terms to proxy site
+	mouse.position = (717,601) #Agree terms to proxy site
 	mouse.click(Button.left, 1)
 	time.sleep(11)
 
-	mouse.position = (783,508) #Modal
+	mouse.position = (710,530) #Modal
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (1348,318) #Click null area
+	mouse.position = (1237,395) #Click null area
 	mouse.click(Button.left, 1)
 	time.sleep(1)
 
@@ -95,9 +89,8 @@ def firefox(url, mediaTabTimes, xServer, yServer):
 	keyboard.release(Key.space)
 	time.sleep(3)
 
-	mouse.position = (1587,14) #Close
+	mouse.position = (1422,17) #Close browser
 	mouse.click(Button.left, 1)
-
 
 
 def startRequest(url,mediaTabTimes):
@@ -105,13 +98,13 @@ def startRequest(url,mediaTabTimes):
   if mediaTabTimes == 'foto':
     qtdTabByMediaType = 3
   if mediaTabTimes == 'video':
-    qtdTabByMediaType = 6
+    qtdTabByMediaType = 5
   if qtdTabByMediaType == 0:
     return
 
-  firefox(url,qtdTabByMediaType,eua1X,eua1Y)
-  firefox(url,qtdTabByMediaType,eua2X,eua2Y)
-  firefox(url,qtdTabByMediaType,aleX,aleY)
-  firefox(url,qtdTabByMediaType,holX,holY)
-  firefox(url,qtdTabByMediaType,ruX,ruY)
-  firefox(url,qtdTabByMediaType,repX,repY)
+  palemoon(url,qtdTabByMediaType,eua1X,eua1Y)
+  palemoon(url,qtdTabByMediaType,eua2X,eua2Y)
+  palemoon(url,qtdTabByMediaType,aleX,aleY)
+  palemoon(url,qtdTabByMediaType,holX,holY)
+  palemoon(url,qtdTabByMediaType,ruX,ruY)
+  palemoon(url,qtdTabByMediaType,repX,repY)

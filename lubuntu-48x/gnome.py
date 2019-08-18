@@ -41,7 +41,7 @@ repY = 837
 
 def gnome(url, mediaTabTimes, xServer, yServer):
 	
-	pyperclip.copy(url)
+	
 	time.sleep(2)
 	mouse.position = (268,883) #Open Gnome Browser
 	mouse.click(Button.left, 1)
@@ -57,13 +57,17 @@ def gnome(url, mediaTabTimes, xServer, yServer):
 
 	mouse.position = (475,613) #Click to select server
 	mouse.click(Button.left, 1)
-	time.sleep(1)
-
+	time.sleep(1)	
+	
 	mouse.position = (xServer,yServer) #Select server
 	mouse.click(Button.left, 1)
 	time.sleep(3)
-
+	
+	pyperclip.copy(url)
+	pyperclip.copy(url)
 	mouse.position = (494,509) #Click right to paste url
+	mouse.click(Button.left, 1)
+	time.sleep(1)
 	mouse.click(Button.right, 1)
 	time.sleep(3)
 
@@ -99,9 +103,9 @@ def gnome(url, mediaTabTimes, xServer, yServer):
 def startRequest(url,mediaTabTimes):
   qtdTabByMediaType = 0
   if mediaTabTimes == 'foto':
-    qtdTabByMediaType = 3
+    qtdTabByMediaType = 2
   if mediaTabTimes == 'video':
-    qtdTabByMediaType = 6
+    qtdTabByMediaType = 5
   if qtdTabByMediaType == 0:
     return
 

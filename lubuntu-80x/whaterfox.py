@@ -14,44 +14,44 @@ def tabPress(qtd):
 
 #Servers position:
 #EUA1
-eua1X = 502
-eua1Y = 654
+eua1X = 505
+eua1Y = 682
 
 #EUA2
-eua2X = 499
-eua2Y = 685
+eua2X = 510
+eua2Y = 714
 
 #ALE
-aleX = 514
-aleY = 719
+aleX = 511
+aleY = 747
 
 #HOL
-holX = 805
-holY = 748
+holX = 503
+holY = 778
 
 #RU
-ruX = 507
-ruY = 778
+ruX = 510
+ruY = 805
 
 #RepTcheca
-repX = 509
-repY = 808
+repX = 508
+repY = 838
 
-# slimjet FOTO: 3TAB || VIDEO: 6TAB
+# whaterfox FOTO: 3TAB || VIDEO: 5TAB
 
-def slimjet(url, mediaTabTimes, xServer, yServer):
-
+def whaterfox(url, mediaTabTimes, xServer, yServer):
+ 
 	pyperclip.copy(url)
 	time.sleep(2)
-	mouse.position = (360,885) #Open Midori Browser
+	mouse.position = (393,883) #Open Whaterfox
 	mouse.click(Button.left, 1)
 	time.sleep(7)
 
-	mouse.position = (144,86) #Open Proxy Site
+	mouse.position = (82,117) #Open Proxy Site
 	mouse.click(Button.left, 1)
 	time.sleep(12)
 
-	mouse.position = (502,610) #Click to select server
+	mouse.position = (486,636) #Click to select server
 	mouse.click(Button.left, 1)
 	time.sleep(1)
 
@@ -59,27 +59,27 @@ def slimjet(url, mediaTabTimes, xServer, yServer):
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (515,516) #Click right to paste url
+	mouse.position = (519,544) #Click right to paste url
 	mouse.click(Button.right, 1)
 	time.sleep(3)
 
-	mouse.position = (565,644) #Paste URL
+	mouse.position = (561,638) #Paste URL
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (716,775) #Click to access site with proxy site
+	mouse.position = (713,804) #Click to access site with proxy site
 	mouse.click(Button.left, 1)
 	time.sleep(11)
 
-	mouse.position = (717,631) #Agree terms to proxy site
+	mouse.position = (712,656) #Agree terms to proxy site
 	mouse.click(Button.left, 1)
 	time.sleep(11)
 
-	mouse.position = (711,492) #Modal
+	mouse.position = (697,518) #Modal
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (1244,409) #Click null area
+	mouse.position = (1260,385) #Click null area
 	mouse.click(Button.left, 1)
 	time.sleep(1)
 
@@ -89,9 +89,8 @@ def slimjet(url, mediaTabTimes, xServer, yServer):
 	keyboard.release(Key.space)
 	time.sleep(3)
 
-	mouse.position = (1422,17) #Close browser
+	mouse.position = (1428,15) #Close browser
 	mouse.click(Button.left, 1)
-
 
 
 def startRequest(url,mediaTabTimes):
@@ -99,13 +98,13 @@ def startRequest(url,mediaTabTimes):
   if mediaTabTimes == 'foto':
     qtdTabByMediaType = 3
   if mediaTabTimes == 'video':
-    qtdTabByMediaType = 6
+    qtdTabByMediaType = 5
   if qtdTabByMediaType == 0:
     return
 
-  slimjet(url,qtdTabByMediaType,eua1X,eua1Y)
-  slimjet(url,qtdTabByMediaType,eua2X,eua2Y)
-  slimjet(url,qtdTabByMediaType,aleX,aleY)
-  slimjet(url,qtdTabByMediaType,holX,holY)
-  slimjet(url,qtdTabByMediaType,ruX,ruY)
-  slimjet(url,qtdTabByMediaType,repX,repY)
+  whaterfox(url,qtdTabByMediaType,eua1X,eua1Y)
+  whaterfox(url,qtdTabByMediaType,eua2X,eua2Y)
+  whaterfox(url,qtdTabByMediaType,aleX,aleY)
+  whaterfox(url,qtdTabByMediaType,holX,holY)
+  whaterfox(url,qtdTabByMediaType,ruX,ruY)
+  whaterfox(url,qtdTabByMediaType,repX,repY)

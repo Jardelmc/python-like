@@ -98,7 +98,7 @@ def startRequest(url,mediaTabTimes):
   if mediaTabTimes == 'foto':
     qtdTabByMediaType = 3
   if mediaTabTimes == 'video':
-    qtdTabByMediaType = 6
+    qtdTabByMediaType = 5
   if qtdTabByMediaType == 0:
     return
 

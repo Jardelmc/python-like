@@ -14,44 +14,44 @@ def tabPress(qtd):
 
 #Servers position:
 #EUA1
-eua1X = 487
-eua1Y = 689
+eua1X = 505
+eua1Y = 682
 
 #EUA2
-eua2X = 487
-eua2Y = 721
+eua2X = 510
+eua2Y = 714
 
 #ALE
-aleX = 490
-aleY = 759
+aleX = 511
+aleY = 747
 
 #HOL
-holX = 484
-holY = 791
+holX = 503
+holY = 778
 
 #RU
-ruX = 486
-ruY = 829
+ruX = 510
+ruY = 805
 
 #RepTcheca
-repX = 503
-repY = 862
+repX = 508
+repY = 838
 
-# yandex FOTO: 3TAB || VIDEO: 6TAB
+# whaterfox FOTO: 3TAB || VIDEO: 5TAB
 
-def yandex(url, mediaTabTimes, xServer, yServer):
-  
+def whaterfox(url, mediaTabTimes, xServer, yServer):
+ 
 	pyperclip.copy(url)
 	time.sleep(2)
-	mouse.position = (330,882) #Open Yandex
+	mouse.position = (393,883) #Open Whaterfox
 	mouse.click(Button.left, 1)
 	time.sleep(7)
 
-	mouse.position = (716,146) #Open Proxy Site
+	mouse.position = (82,117) #Open Proxy Site
 	mouse.click(Button.left, 1)
 	time.sleep(12)
 
-	mouse.position = (475,635) #Click to select server
+	mouse.position = (486,636) #Click to select server
 	mouse.click(Button.left, 1)
 	time.sleep(1)
 
@@ -59,27 +59,27 @@ def yandex(url, mediaTabTimes, xServer, yServer):
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (493,530) #Click right to paste url
+	mouse.position = (519,544) #Click right to paste url
 	mouse.click(Button.right, 1)
 	time.sleep(3)
 
-	mouse.position = (517,648) #Paste URL
+	mouse.position = (561,638) #Paste URL
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (710,819) #Click to access site with proxy site
+	mouse.position = (713,804) #Click to access site with proxy site
 	mouse.click(Button.left, 1)
 	time.sleep(11)
 
-	mouse.position = (721,598) #Agree terms to proxy site
+	mouse.position = (712,656) #Agree terms to proxy site
 	mouse.click(Button.left, 1)
 	time.sleep(11)
 
-	mouse.position = (683,460) #Modal
+	mouse.position = (697,518) #Modal
 	mouse.click(Button.left, 1)
 	time.sleep(3)
 
-	mouse.position = (1260,369) #Click null area
+	mouse.position = (1260,385) #Click null area
 	mouse.click(Button.left, 1)
 	time.sleep(1)
 
@@ -89,9 +89,8 @@ def yandex(url, mediaTabTimes, xServer, yServer):
 	keyboard.release(Key.space)
 	time.sleep(3)
 
-	mouse.position = (1419,15) #Close browser
+	mouse.position = (1428,15) #Close browser
 	mouse.click(Button.left, 1)
-
 
 
 def startRequest(url,mediaTabTimes):
@@ -99,13 +98,13 @@ def startRequest(url,mediaTabTimes):
   if mediaTabTimes == 'foto':
     qtdTabByMediaType = 3
   if mediaTabTimes == 'video':
-    qtdTabByMediaType = 6
+    qtdTabByMediaType = 5
   if qtdTabByMediaType == 0:
     return
 
-  yandex(url,qtdTabByMediaType,eua1X,eua1Y)
-  yandex(url,qtdTabByMediaType,eua2X,eua2Y)
-  yandex(url,qtdTabByMediaType,aleX,aleY)
-  yandex(url,qtdTabByMediaType,holX,holY)
-  yandex(url,qtdTabByMediaType,ruX,ruY)
-  yandex(url,qtdTabByMediaType,repX,repY)
+  whaterfox(url,qtdTabByMediaType,eua1X,eua1Y)
+  whaterfox(url,qtdTabByMediaType,eua2X,eua2Y)
+  whaterfox(url,qtdTabByMediaType,aleX,aleY)
+  whaterfox(url,qtdTabByMediaType,holX,holY)
+  whaterfox(url,qtdTabByMediaType,ruX,ruY)
+  whaterfox(url,qtdTabByMediaType,repX,repY)

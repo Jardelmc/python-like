@@ -47,8 +47,8 @@ def falkon(url, mediaTabTimes, xServer, yServer):
 	mouse.click(Button.left, 1)
 	time.sleep(7)
 
-  mouse.position = (719,195) #Accept coockie terms
-	mouse.click(Button.left, 1)
+  	mouse.position = (719,195) #Accept coockie terms
+	mouse.click(Button.left, 2)
 	time.sleep(2)
 	
 	mouse.position = (497,629) #Click to select server
@@ -64,7 +64,7 @@ def falkon(url, mediaTabTimes, xServer, yServer):
 	time.sleep(3)
 
 	mouse.position = (558,665) #Paste URL
-	mouse.click(Button.left, 2)
+	mouse.click(Button.left, 1)
 	time.sleep(3)
 
 	mouse.position = (706,801) #Click to access site with proxy site
@@ -96,9 +96,9 @@ def falkon(url, mediaTabTimes, xServer, yServer):
 def startRequest(url,mediaTabTimes):
   qtdTabByMediaType = 0
   if mediaTabTimes == 'foto':
-    qtdTabByMediaType = 3
+    qtdTabByMediaType = 1
   if mediaTabTimes == 'video':
-    qtdTabByMediaType = 6
+    qtdTabByMediaType = 5
   if qtdTabByMediaType == 0:
     return
 
